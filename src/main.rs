@@ -21,7 +21,7 @@ fn main() {
 				let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
 				let xvec = inputln!("Enter X Vector: ").trim().parse().unwrap_or(0);
 				let yvec = inputln!("Enter Y Vector: ").trim().parse().unwrap_or(0);
-
+						// once user has input xy and vector with just add, simple
 				x = x + xvec;
 				y = y + yvec;
 				println!("the new coordinates are: {}, {}", x, y)
@@ -35,7 +35,7 @@ fn main() {
 					println!("Please select one of the rotations listed to the right. 90, 180, 270. (1, 2, 3)");
 					let o: i32 = inputln!("").trim().parse().unwrap_or(0);
 					match o {
-						1 => {
+						1 => { // 90 degrees
 							println!("90 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 							let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
@@ -44,7 +44,7 @@ fn main() {
 							y = -xsave;
 							println!("your new coordinates are: {}, {}", x, y);
 						}
-						2 => {
+						2 => { // 180 degrees
 							println!("180 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 							let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
@@ -52,14 +52,14 @@ fn main() {
 							x = -x;
 							println!("your new coordinates are: {}, {}", x, y);
 						}
-						3 => {
+						3 => { // 270 degrees
 							println!("270 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 							let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
 							let xsave = x;  //save both vars
 							x = -y;
 							y = xsave;
-							println!("your new coordinates are: {}, {}", x, y);
+							println!("your new coordinates are: {}, {}", x, y); // output
 						}
 						_ => {
 							println!("Please enter a positive integer (1-3)"); // error message
@@ -70,7 +70,7 @@ fn main() {
 					println!("please select one of the above rotations. 90, 180, 270. (1, 2, 3)");
 					let o: i32 = inputln!("").trim().parse().unwrap_or(0);
 					match o { // SWITCH FOR ROTATION
-						1 => {
+						1 => { // 90 degrees
 							println!("90 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 							let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
@@ -79,7 +79,7 @@ fn main() {
 							y = xsave;
 							println!("your new coordinates are: {}, {}", x, y);
 						}
-						2 => {
+						2 => { // 180 degrees
 							println!("180 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 							let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
@@ -87,7 +87,7 @@ fn main() {
 							x = -x;
 							println!("your new coordinates are: {}, {}", x, y);
 						}
-						3 => {
+						3 => { // 270 degrees
 							println!("270 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 							let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
@@ -117,14 +117,14 @@ fn main() {
 						println!("You chose: Reflect over X axis");
 						let x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 						let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
-						y = -y;
+						y = -y; // just flip y
 						println!("the flipped coordinates are: {}, {}", x, y);
 					}
 					2 => {
 						println!("You chose: Reflect over Y axis");
 						let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 						let y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
-						x = -x;
+						x = -x; // just flip x
 						println!("the flipped coordinates are: {}, {}", x, y);
 					}
 					3 => {
@@ -132,7 +132,7 @@ fn main() {
 						let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 						let y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
 						let xflip = inputln!("Enter X flip: ").trim().parse().unwrap_or(0);
-						x = (2 * xflip) - x;
+						x = (2 * xflip) - x; // multiply the 2 of the line of symmetry and subtract x
 						println!("the flipped coordinates are: {}, {}", x, y);
 					}
 					4 => {
@@ -140,7 +140,7 @@ fn main() {
 						let x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 						let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
 						let yflip = inputln!("Enter Y flip: ").trim().parse().unwrap_or(0);
-						y = (2 * yflip) - y;
+						y = (2 * yflip) - y; // line of symmetry Y * 2 minus y is the new coordinates
 						println!("the flipped coordinates are: {}, {}", x, y);
 					}
 					5 => {
@@ -151,7 +151,7 @@ fn main() {
 						x = y;
 						y = xsave;
 						println!("the flipped coordinates are: {}, {}", x, y);
-					}
+					} // use the rule which I don't remember
 					6 => {
 						println!("You chose: Reflect over Y = -X");
 						let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
@@ -174,7 +174,7 @@ fn main() {
 		println!("type 1 to go to menu, type literally anything else to close it.");
 		let menu: i32 = inputln!("").trim().parse().unwrap_or(0);
 		if menu != 1 {
-			break
+			break // to stop from closing once the  operation is done
 		}
 	}
 }

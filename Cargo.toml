@@ -6,3 +6,7 @@ edition = "2024"
 [dependencies]
 ez_input = "0.1.0"
 log = "0.4.34"
+
+[target.x86_64-pc-windows-gnu]
+linker = "x86_64-w64-mingw32-gcc"
+ar = "x86_64-w64-mingw32-ar"
