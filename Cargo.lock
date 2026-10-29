@@ -3,5 +3,21 @@
 version = 4
 
 [[package]]
+name = "ez_input"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c8b6eae8493f4fa4b0246cc384ada692997898da67e88aae39bafb17cc0b560d"
+
+[[package]]
 name = "geometryarithmeticthingy"
 version = "0.1.0"
+dependencies = [
+ "ez_input",
+ "log",
+]
+
+[[package]]
+name = "log"
+version = "0.4.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9f8bd3e56ce4dfc153cf470fffbfa98c7620958b312ca5c3a4b8d5181fd13c6"
