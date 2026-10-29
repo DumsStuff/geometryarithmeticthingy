@@ -3,8 +3,8 @@ use ez_input::inputln;
 fn main() {
 	loop {
 
-	println!(">---------------- ||  [Welcome to the CLINIB Tranformation Calculator v1]  || ----------------<");
-	println!("                         (command line interface & number input based) ");
+	println!(">---------------- ||  [Welcome to the CLINIB Transformation Calculator v1]  || ----------------<");
+	println!("                          (command line interface  number input based)   ");
 	println!("1 for translation,");
 	println!("2 for rotation,");
 	println!("3 for mirroring.");
@@ -13,8 +13,9 @@ fn main() {
 
 		let r: i32 = input_string.trim().parse().unwrap_or(0);
 		// trim removes space parse makes it an int.
+		// match is essentially a replacement for switch except it stores a variable and requires a default option in case none of the cases apply to the var
 		match r {
-			1 => {
+			1 => { //TRANSLATION CODE
 				println!("Translation selected.");
 				let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
 				let mut y = inputln!("Enter Y coordinate: ").trim().parse().unwrap_or(0);
@@ -25,13 +26,13 @@ fn main() {
 				y = y + yvec;
 				println!("the new coordinates are: {}, {}", x, y)
 			}
-			2 => {
+			2 => { // ROTATION CODE
 				println!("Rotation selected.");
-				println!("Please select: Clockwise or Counterclockwise (1 or 2)");
+				println!("Please select: Clockwise or Counterclockwise (1 or 2)"); //clockwise stuff
 				let dir: i32 = inputln!("").trim().parse().unwrap_or(0);
 				if dir == 1 {
-					println!("clockwise rotation Selected");
-					println!("please select one of the above rotations. 90, 180, 270. (1, 2, 3)");
+					println!("Clockwise rotation Selected");
+					println!("Please select one of the rotations listed to the right. 90, 180, 270. (1, 2, 3)");
 					let o: i32 = inputln!("").trim().parse().unwrap_or(0);
 					match o {
 						1 => {
@@ -61,14 +62,14 @@ fn main() {
 							println!("your new coordinates are: {}, {}", x, y);
 						}
 						_ => {
-							println!("Please enter a positive integer (1-3)");
+							println!("Please enter a positive integer (1-3)"); // error message
 						}
 					}
 				} else {
 					println!("Counter-clockwise rotation Selected");
 					println!("please select one of the above rotations. 90, 180, 270. (1, 2, 3)");
 					let o: i32 = inputln!("").trim().parse().unwrap_or(0);
-					match o {
+					match o { // SWITCH FOR ROTATION
 						1 => {
 							println!("90 Degree rotation Selected");
 							let mut x = inputln!("Enter X coordinate: ").trim().parse().unwrap_or(0);
@@ -96,12 +97,12 @@ fn main() {
 							println!("your new coordinates are: {}, {}", x, y);
 						}
 						_ => {
-							println!("Please enter a positive integer (1-3)");
+							println!("Please enter a positive integer (1-3)"); // error message
 						}
 					}
 				}
 			}
-			3 => {
+			3 => { //MIRRORING CODE
 				println!("Mirroring selected.");
 				println!("Please select:");
 				println!("Reflect over X axis (1)");
@@ -161,7 +162,7 @@ fn main() {
 						println!("the flipped coordinates are: {}, {}", x, y);
 					}
 					_ => {
-						println!("Please enter a positive integer (1-6)");
+						println!("Please enter a positive integer (1-6)"); // error message
 					}
 				}
 			}
